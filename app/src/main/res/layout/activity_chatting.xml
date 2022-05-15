@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorButtonNormal"
+    tools:context="com.test.js.chat.GotoChattingRoomActivity">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/FBtn_record"
+        android:layout_width="55dp"
+        android:layout_height="53dp"
+        android:layout_above="@+id/linearb"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        android:onClick="FBtn_record_onClick"
+        android:scaleType="fitXY"
+        app:backgroundTint="@color/colorPuple"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/radio_microphone_write" />
+
+    <LinearLayout
+        android:id="@+id/Li_chat"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearb"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="16dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Rv_chat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_editor_absoluteY="8dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="470dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <!--android:windowSoftInputMode="adjustResize"-->
+        <!--키보드 위에 레이아웃 위치-->
+
+        <ImageButton
+            android:id="@+id/ib_addfile"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            android:onClick="ib_addfile"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/plus2" />
+
+        <EditText
+            android:id="@+id/Et_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="479dp" />
+
+        <Button
+            android:id="@+id/bt_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPuple"
+            android:text="전송"
+            android:textColor="@android:color/background_light" />
+
+    </LinearLayout>
+
+</RelativeLayout>
